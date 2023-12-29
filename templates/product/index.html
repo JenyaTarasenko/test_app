@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Test shop{% endblock %}</title>
+</head>
+<body>
+{% block content %}
+<!--категории товара-->
+<div class="category">
+        <h2>Category product</h2>
+    {% for category_item in categories %}
+        <a href=""><p>{{ category_item.name }}</p></a>
+    {% endfor %}
+
+</div>
+
+<!-- товар-->
+    <h1>Products</h1>
+    {% for product_item in products %}
+        <div>
+            <ul>
+                <li>Products name:{{ product_item.name }} </li>
+                <li>Products body:{{ product_item.body }} </li>
+                <li>Products price:{{ product_item.price }} </li>
+            </ul>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}
+
+
+</body>
+</html>
